@@ -43,6 +43,13 @@ namespace Logging
             return this;
         }
 
+        public LogEntryBuilder Clear()
+        {
+            _builder.Clear();
+            LogLevel = LogLevel.Information;
+            return this;
+        }
+
         public IDisposable CreateDuration_ms(string key="duration_ms")
         {
             return new LogEntryDuration(this, key);
@@ -61,11 +68,6 @@ namespace Logging
         public LogEntryBuilder Exception(string exception)
         {
             return Append("exception", exception);
-        }
-
-        public LogEntryBuilder Org(string orgId)
-        {
-            return Append("org", orgId);
         }
 
         public LogEntryBuilder StartTime(DateTimeOffset startTime)
