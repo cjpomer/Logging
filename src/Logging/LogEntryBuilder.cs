@@ -27,6 +27,8 @@ namespace Logging
         }
         readonly StringBuilder _builder;
 
+        public LogLevel LogLevel { get; set; } = LogLevel.Information;
+
         public LogEntryBuilder()
         {
             _builder = new StringBuilder();
