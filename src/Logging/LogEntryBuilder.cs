@@ -37,6 +37,12 @@ namespace Logging
 
         public static implicit operator string(LogEntryBuilder builder) => builder.ToString();
 
+        public LogEntryBuilder Append(string value)
+        {
+            _builder.Append(value);
+            return this;
+        }
+
         public LogEntryBuilder Append(string key, string value)
         {
             _builder.Append($"{key}={value} ");
