@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Logging
 {
-    public class LoggingContext<T> : IDisposable
+    public struct LoggingContext<T> : IDisposable
     {
         private readonly ILogger<T> _logger;
         private readonly LogEntryBuilder _logEntry;
