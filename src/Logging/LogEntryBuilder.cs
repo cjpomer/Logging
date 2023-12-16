@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Logging
 {
-    public class LogEntryBuilder
+    public struct LogEntryBuilder
     {
-        private class LogEntryDuration : IDisposable
+        private readonly struct LogEntryDuration : IDisposable
         {
             private readonly LogEntryBuilder _builder;
             private readonly string _key;
